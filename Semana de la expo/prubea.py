@@ -32,17 +32,10 @@ def cuadrado(x):
 numeros = [1, 2, 3, 4]
 print(aplicar_funcion(cuadrado, numeros))  # [1, 4, 9, 16]
 
-
-
 def saludar(nombre):
     return f"Hola, {nombre}!"
 
 print(saludar("Mundo"))  # Hola, Mundo!
-
-
-
-
-
 
 
 # función sin parámetros o retorno de valores
