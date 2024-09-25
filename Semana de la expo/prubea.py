@@ -41,10 +41,6 @@ print(saludar("Mundo"))  # Hola, Mundo!
 
 
 
-def saludar(nombre):
-    return f"Hola, {nombre}!"
-
-print(saludar("Mundo"))  # Hola, Mundo!
 
 
 
