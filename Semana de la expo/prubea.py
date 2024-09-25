@@ -84,8 +84,7 @@ print(impura(3, 4))
 
 
 # Función que eleva al cuadrado un número
-def cuadrado(x):
-    return x * x
+
 
 # Uso de map con la función cuadrado
 numeros = [1, 2, 3, 4, 5]
@@ -110,11 +109,6 @@ print(elevar_al_cubo(2))  # Debería imprimir 8
 def compose(f, g):
     return lambda x: f(g(x))
 
-def multiplicar_por_dos(x):
-    return x * 2
-
-def sumar_tres(x):
-    return x + 3
 
 # Composición de las funciones
 componer = compose(multiplicar_por_dos, sumar_tres)
