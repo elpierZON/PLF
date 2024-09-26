@@ -66,11 +66,20 @@ print(resultado)
 
 print("CALCULADORA CIENTIFICA")
 
-def calculadora():
-    print("Introduzca la operacion")
-    valor = int(input())
-    print("Intruduzca")
-    operacion = input("Elija la operacion que desea: ")
+def calculadora_cientifica():
+    numero = int(input("Ingrese un numero a maximo "))
+    print("elige la operacion: ")
+    print("1: Seno")
+    print("2: Coseno")
+    print("3: Tangente")
+    print("4: Exponencial")
+    print("5: Logaritmo Neperiano")
+    operacion = int(input("Introduzca el numero de la operacion deseada"))
+
+    if operacion==1:
+
+        
     
 
 
+calculadora_cientifica()    
