@@ -1,3 +1,134 @@
-no se qe poner wn xd
-poto
-vivan
+
+#include "miniwin.h"
+#include <string>
+
+using namespace miniwin;
+using namespace std;
+
+const int escalado = 10;  // <-------------------- Escalado de los cuadrados
+const bool pintarBorde = false; // <-------------------- Pintar borde de los cuadrados
+
+void colores(const string& color) {
+        if (color == "color_1") {
+            color_rgb(214, 51, 254);
+        }
+        if (color == "color_2") {
+            color_rgb(246, 211, 45);
+        }
+        if (color == "color_3") {
+            color_rgb(229, 165, 10);
+        }
+        if (color == "color_4") {
+            color_rgb(255, 206, 244);
+        }
+        if (color == "color_5") {
+            color_rgb(97, 53, 131);
+        }
+        if (color == "color_6") {
+            color_rgb(179, 73, 170);
+        }
+        if (color == "color_7") {
+            color_rgb(0, 0, 0);
+        }
+}
+
+void dibujaCuadrado(int a, int b, const string& colorRelleno) {
+    const int x = a * escalado;
+    const int y = b * escalado;
+    colores(colorRelleno);
+    rectangulo_lleno(x, y, x + escalado, y + escalado);
+    if (pintarBorde) {
+        color_rgb(100, 100, 100); // <-------------------- Color plomo para el borde
+        linea(x, y, x, y + escalado);
+        linea(x, y + escalado, x + escalado, y + escalado);
+        linea(x + escalado, y + escalado, x + escalado, y);
+        linea(x + escalado, y, x, y);
+    }
+}
+
+int main() {
+    vredimensiona(36 * escalado, 28 * escalado);
+
+    // Dibujando
+    dibujaCuadrado(12, 7 , "color_3");
+    dibujaCuadrado(22, 7 , "color_3");
+    dibujaCuadrado(13, 8 , "color_1");
+    dibujaCuadrado(21, 8 , "color_1");
+    dibujaCuadrado(13, 9 , "color_1");
+    dibujaCuadrado(16, 9 , "color_1");
+    dibujaCuadrado(17, 9 , "color_1");
+    dibujaCuadrado(18, 9 , "color_1");
+    dibujaCuadrado(21, 9 , "color_1");
+    dibujaCuadrado(14, 10 , "color_4");
+    dibujaCuadrado(15, 10 , "color_4");
+    dibujaCuadrado(16, 10 , "color_1");
+    dibujaCuadrado(17, 10 , "color_1");
+    dibujaCuadrado(18, 10 , "color_1");
+    dibujaCuadrado(19, 10 , "color_4");
+    dibujaCuadrado(20, 10 , "color_4");
+    dibujaCuadrado(13, 11 , "color_1");
+    dibujaCuadrado(14, 11 , "color_4");
+    dibujaCuadrado(15, 11 , "color_7");
+    dibujaCuadrado(16, 11 , "color_1");
+    dibujaCuadrado(17, 11 , "color_1");
+    dibujaCuadrado(18, 11 , "color_1");
+    dibujaCuadrado(19, 11 , "color_4");
+    dibujaCuadrado(20, 11 , "color_7");
+    dibujaCuadrado(21, 11 , "color_1");
+    dibujaCuadrado(13, 12 , "color_1");
+    dibujaCuadrado(14, 12 , "color_1");
+    dibujaCuadrado(15, 12 , "color_1");
+    dibujaCuadrado(16, 12 , "color_1");
+    dibujaCuadrado(17, 12 , "color_1");
+    dibujaCuadrado(18, 12 , "color_1");
+    dibujaCuadrado(19, 12 , "color_1");
+    dibujaCuadrado(20, 12 , "color_1");
+    dibujaCuadrado(21, 12 , "color_1");
+    dibujaCuadrado(11, 13 , "color_2");
+    dibujaCuadrado(12, 13 , "color_1");
+    dibujaCuadrado(13, 13 , "color_1");
+    dibujaCuadrado(14, 13 , "color_1");
+    dibujaCuadrado(15, 13 , "color_6");
+    dibujaCuadrado(16, 13 , "color_1");
+    dibujaCuadrado(17, 13 , "color_1");
+    dibujaCuadrado(18, 13 , "color_1");
+    dibujaCuadrado(19, 13 , "color_6");
+    dibujaCuadrado(20, 13 , "color_6");
+    dibujaCuadrado(21, 13 , "color_1");
+    dibujaCuadrado(22, 13 , "color_1");
+    dibujaCuadrado(23, 13 , "color_2");
+    dibujaCuadrado(12, 14 , "color_6");
+    dibujaCuadrado(13, 14 , "color_6");
+    dibujaCuadrado(14, 14 , "color_6");
+    dibujaCuadrado(15, 14 , "color_6");
+    dibujaCuadrado(16, 14 , "color_6");
+    dibujaCuadrado(17, 14 , "color_6");
+    dibujaCuadrado(18, 14 , "color_6");
+    dibujaCuadrado(19, 14 , "color_6");
+    dibujaCuadrado(20, 14 , "color_6");
+    dibujaCuadrado(21, 14 , "color_6");
+    dibujaCuadrado(22, 14 , "color_6");
+    dibujaCuadrado(13, 15 , "color_5");
+    dibujaCuadrado(16, 15 , "color_5");
+    dibujaCuadrado(18, 15 , "color_5");
+    dibujaCuadrado(21, 15 , "color_5");
+    dibujaCuadrado(13, 16 , "color_1");
+    dibujaCuadrado(14, 16 , "color_1");
+    dibujaCuadrado(16, 16 , "color_1");
+    dibujaCuadrado(18, 16 , "color_1");
+    dibujaCuadrado(20, 16 , "color_1");
+    dibujaCuadrado(21, 16 , "color_1");
+    dibujaCuadrado(14, 17 , "color_1");
+    dibujaCuadrado(16, 17 , "color_1");
+    dibujaCuadrado(18, 17 , "color_1");
+    dibujaCuadrado(20, 17 , "color_1");
+    dibujaCuadrado(13, 18 , "color_1");
+    dibujaCuadrado(14, 18 , "color_1");
+    dibujaCuadrado(16, 18 , "color_1");
+    dibujaCuadrado(18, 18 , "color_1");
+    dibujaCuadrado(20, 18 , "color_1");
+    dibujaCuadrado(21, 18 , "color_1");
+
+    refresca();
+    return 0;
+}

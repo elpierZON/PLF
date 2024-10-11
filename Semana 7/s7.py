@@ -82,4 +82,7 @@ def calculadora_cientifica():
     
 
 
-calculadora_cientifica()    
+
+
+calculadora_cientifica()  
+
