@@ -1,0 +1,233 @@
+#include "miniwin.h"
+#include <string>
+using namespace std;
+
+using namespace miniwin;
+const int escalado = 5;  // <-------------------- Escalado de los cuadrados
+const bool pintarBorde = false; // <-------------------- Pintar borde de los cuadrados
+
+void colores(const string& color) {
+        if (color == "color_1") {
+            color_rgb(214, 51, 254);
+        }
+        if (color == "color_2") {
+            color_rgb(246, 211, 45);
+        }
+        if (color == "color_3") {
+            color_rgb(229, 165, 10);
+        }
+        if (color == "color_4") {
+            color_rgb(255, 206, 244);
+        }
+        if (color == "color_5") {
+            color_rgb(97, 53, 131);
+        }
+        if (color == "color_6") {
+            color_rgb(179, 73, 170);
+        }
+        if (color == "color_7") {
+            color_rgb(0, 0, 0);
+        }
+}
+
+void dibujaCuadrado(int a, int b, const string & colorRelleno) {
+    const int x = a * escalado;
+    const int y = b * escalado;
+    colores(colorRelleno);
+    rectangulo_lleno(x, y, x + escalado, y + escalado);
+    if (pintarBorde) {
+        color_rgb(100, 100, 100); // <-------------------- Color plomo para el borde
+        linea(x, y, x, y + escalado);
+        linea(x, y + escalado, x + escalado, y + escalado);
+        linea(x + escalado, y + escalado, x + escalado, y);
+        linea(x + escalado, y, x, y);
+    }
+}
+
+void cuadrado(int x, int y)
+{
+    //CONTORNO DE LA NAVE
+    color_rgb(100,100,100);
+
+    rectangulo_lleno(250+x,250+y,260+x,255+y);
+
+    rectangulo_lleno(245+x,255+y,250+x,270+y);
+    rectangulo_lleno(260+x,255+y,265+x,270+y);
+
+    rectangulo_lleno(240+x,270+y,245+x,295+y);
+    rectangulo_lleno(265+x,270+y,270+x,295+y);
+
+    rectangulo_lleno(235+x,295+y,240+x,300+y);
+    rectangulo_lleno(270+x,295+y,275+x,300+y);
+
+    rectangulo_lleno(225+x,290+y,235+x,295+y);
+    rectangulo_lleno(275+x,290+y,285+x,295+y);
+
+    rectangulo_lleno(220+x,295+y,225+x,330+y);
+    rectangulo_lleno(285+x,295+y,290+x,330+y);
+
+    rectangulo_lleno(225+x,320+y,240+x,325+y);
+    rectangulo_lleno(270+x,320+y,285+x,325+y);
+
+    rectangulo_lleno(240+x,325+y,245+x,330+y);
+    rectangulo_lleno(265+x,325+y,270+x,330+y);
+
+    rectangulo_lleno(245+x,330+y,265+x,335+y);
+
+    //Linea Central
+    rectangulo_lleno(252+x,305+y,258+x,325+y);
+
+    //Color naranja
+    color_rgb(255,177,20);
+
+    rectangulo_lleno(225+x,325+y,240+x,330+y);
+    rectangulo_lleno(230+x,330+y,235+x,345+y);
+
+    rectangulo_lleno(225+x+45,325+y,240+x+45,330+y);
+    rectangulo_lleno(230+x+45,330+y,235+x+45,345+y);
+
+    //Efecto nave Color rojo
+    color(ROJO);
+    rectangulo_lleno(225+x,330+y,230+x,345+y);
+    rectangulo_lleno(235+x,330+y,240+x,345+y);
+    rectangulo_lleno(230+x,345+y,235+x,350+y);
+
+    rectangulo_lleno(225+x+45,330+y,230+x+45,345+y);
+    rectangulo_lleno(235+x+45,330+y,240+x+45,345+y);
+    rectangulo_lleno(230+x+45,345+y,235+x+45,350+y);
+
+}
+
+void enemigo(int x, int y){
+
+    // Utiliza x e y para definir las posiciones del enemigo
+    dibujaCuadrado(x + 12, y + 7, "color_3");
+    dibujaCuadrado(x + 22, y + 7, "color_3");
+    dibujaCuadrado(x + 13, y + 8, "color_1");
+    dibujaCuadrado(x + 21, y + 8, "color_1");
+    dibujaCuadrado(x + 13, y + 9, "color_1");
+    dibujaCuadrado(x + 16, y + 9, "color_1");
+    dibujaCuadrado(x + 17, y + 9, "color_1");
+    dibujaCuadrado(x + 18, y + 9, "color_1");
+    dibujaCuadrado(x + 21, y + 9, "color_1");
+    dibujaCuadrado(x + 14, y + 10, "color_4");
+    dibujaCuadrado(x + 15, y + 10, "color_4");
+    dibujaCuadrado(x + 16, y + 10, "color_1");
+    dibujaCuadrado(x + 17, y + 10, "color_1");
+    dibujaCuadrado(x + 18, y + 10, "color_1");
+    dibujaCuadrado(x + 19, y + 10, "color_4");
+    dibujaCuadrado(x + 20, y + 10, "color_4");
+    dibujaCuadrado(x + 13, y + 11, "color_1");
+    dibujaCuadrado(x + 14, y + 11, "color_4");
+    dibujaCuadrado(x + 15, y + 11, "color_7");
+    dibujaCuadrado(x + 16, y + 11, "color_1");
+    dibujaCuadrado(x + 17, y + 11, "color_1");
+    dibujaCuadrado(x + 18, y + 11, "color_1");
+    dibujaCuadrado(x + 19, y + 11, "color_4");
+    dibujaCuadrado(x + 20, y + 11, "color_7");
+    dibujaCuadrado(x + 21, y + 11, "color_1");
+    dibujaCuadrado(x + 13, y + 12, "color_1");
+    dibujaCuadrado(x + 14, y + 12, "color_1");
+    dibujaCuadrado(x + 15, y + 12, "color_1");
+    dibujaCuadrado(x + 16, y + 12, "color_1");
+    dibujaCuadrado(x + 17, y + 12, "color_1");
+    dibujaCuadrado(x + 18, y + 12, "color_1");
+    dibujaCuadrado(x + 19, y + 12, "color_1");
+    dibujaCuadrado(x + 20, y + 12, "color_1");
+    dibujaCuadrado(x + 21, y + 12, "color_1");
+    dibujaCuadrado(x + 11, y + 13, "color_2");
+    dibujaCuadrado(x + 12, y + 13, "color_1");
+    dibujaCuadrado(x + 13, y + 13, "color_1");
+    dibujaCuadrado(x + 14, y + 13, "color_1");
+    dibujaCuadrado(x + 15, y + 13, "color_6");
+    dibujaCuadrado(x + 16, y + 13, "color_1");
+    dibujaCuadrado(x + 17, y + 13, "color_1");
+    dibujaCuadrado(x + 18, y + 13, "color_1");
+    dibujaCuadrado(x + 19, y + 13, "color_6");
+    dibujaCuadrado(x + 20, y + 13, "color_6");
+    dibujaCuadrado(x + 21, y + 13, "color_1");
+    dibujaCuadrado(x + 22, y + 13, "color_1");
+    dibujaCuadrado(x + 23, y + 13, "color_2");
+    dibujaCuadrado(x + 12, y + 14, "color_6");
+    dibujaCuadrado(x + 13, y + 14, "color_6");
+    dibujaCuadrado(x + 14, y + 14, "color_6");
+    dibujaCuadrado(x + 15, y + 14, "color_6");
+    dibujaCuadrado(x + 16, y + 14, "color_6");
+    dibujaCuadrado(x + 17, y + 14, "color_6");
+    dibujaCuadrado(x + 18, y + 14, "color_6");
+    dibujaCuadrado(x + 19, y + 14, "color_6");
+    dibujaCuadrado(x + 20, y + 14, "color_6");
+    dibujaCuadrado(x + 21, y + 14, "color_6");
+    dibujaCuadrado(x + 22, y + 14, "color_6");
+    dibujaCuadrado(x + 13, y + 15, "color_5");
+    dibujaCuadrado(x + 16, y + 15, "color_5");
+    dibujaCuadrado(x + 18, y + 15, "color_5");
+    dibujaCuadrado(x + 21, y + 15, "color_5");
+    dibujaCuadrado(x + 13, y + 16, "color_1");
+    dibujaCuadrado(x + 14, y + 16, "color_1");
+    dibujaCuadrado(x + 16, y + 16, "color_1");
+    dibujaCuadrado(x + 18, y + 16, "color_1");
+    dibujaCuadrado(x + 20, y + 16, "color_1");
+    dibujaCuadrado(x + 21, y + 16, "color_1");
+    dibujaCuadrado(x + 14, y + 17, "color_1");
+    dibujaCuadrado(x + 16, y + 17, "color_1");
+    dibujaCuadrado(x + 18, y + 17, "color_1");
+    dibujaCuadrado(x + 20, y + 17, "color_1");
+    dibujaCuadrado(x + 13, y + 18, "color_1");
+    dibujaCuadrado(x + 14, y + 18, "color_1");
+    dibujaCuadrado(x + 16, y + 18, "color_1");
+    dibujaCuadrado(x + 18, y + 18, "color_1");
+    dibujaCuadrado(x + 20, y + 18, "color_1");
+    dibujaCuadrado(x + 21, y + 18, "color_1");
+}
+
+int main()
+{
+    vredimensiona(500,500);
+    int x=100, y=120;
+    int a=10, b=-6;
+
+    int p,di;
+    int pp,dii;
+
+
+    int t=tecla();
+    while(t != ESCAPE)
+    {
+         if(t==IZQUIERDA)
+         {
+            x=x-5, y=y+0;
+
+         }else
+         if(t==DERECHA){
+            x=x+5, y=y+0;
+         }
+         p=rand()%50;
+         if(p==0){
+                  di=IZQUIERDA;
+                 }
+         if(p==1){
+                di=DERECHA;
+                 }
+        if(di==IZQUIERDA){
+                        if(a>=20){
+                            a=a+15,b=b+0;
+                            }
+                        }else if(di==DERECHA){
+                                            if(a>445){
+                                            a=a+15,b=b+0;
+                                                    }
+                                            }
+
+         borra();
+         cuadrado(x,y);
+         enemigo(a,b);
+         refresca();
+         espera(10);
+         t=tecla();
+
+
+    }
+
+return 0;
+}

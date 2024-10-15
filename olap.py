@@ -1,51 +1,15 @@
-def suma(a,b):
-    return a+b
-print(suma(1,2))
 
-#las listas permiten almacenar cualquier tipo de dato
-lista=["rojo","azul","erde","amarillo",10,5,6,"Jupiter"]
+def problema1():
+    lista = input("ingrese las palabras separadas por espacio: ").split()
+    print(lista)
 
-#####
-lista_colores=["rojo","azul","verde","Amarilo"]
-print(lista_colores[1]) #azul
-print(f"El 3er valor de la lista es: {lista_colores[2]}")   #verde
+    sustituir = input("ingrese la palabra a sustituir: ")
+    nueva_palabra= input("ingrese la nueva palabra: ")
 
-##ACCEDIENDO A UN CARACTER DE LA LISTA
-print(lista_colores[0][1]) # o
-print(f"el 2do valor con la ultima letra es: {lista_colores[1][-1]}") #l
+    for i in range(len(lista)):
+        if lista[i] == sustituir : lista[i] = nueva_palabra
 
-#remplazando valor de la lista
-lista_colores[1]="NAranja"
-print(lista_colores)
-
-#agregando sin reemplazarlo
-lista_colores.insert(0,"morado")
-print(lista_colores)
-
-
-##### TUPLAS ######
-#las tuplas no son mutables, en cambio las listas si
-
-tupla= (1,2,3,4)
-print(tupla)
-print(tupla[0])
-print(tupla[2])
-
-tupla2=(6,7,8,9)
-subtupla=tupla2[1:3]
-print(f"la tupla2 es: {tupla2}")
-print(f"subtupla es :{subtupla}")
-print(tupla2[:-1]) 
-print(tupla2[:])
-
-#podemos convertir tuplas a listas y viceversa
-
-lista2 = [1,2,3,4,5]
-tupla2 = ("pep","juan","roberto")
-
-print(tuple(lista2))
-print(list(tupla2))
-
+    print(lista) 
 
 def eliminar_repeticiones(lista):
     return list(set(lista))
@@ -80,6 +44,38 @@ def crear_listas():
     print("Palabras que aparecen solo en la primera lista:", solo_en_primera)
     print("Palabras que aparecen solo en la segunda lista:", solo_en_segunda)
     print("Todas las palabras que aparecen en ambas listas:", union)
-
+#crear_listas()
 # Llamar a la función principal
-crear_listas()
+
+
+def decimales():
+    # Solicitar al usuario el nombre del producto
+    nombre_producto = input("Ingrese el nombre del producto: ")
+
+    # Solicitar al usuario el precio del producto
+    precio_producto = float(input("Ingrese el precio del producto: "))
+
+    # Solicitar al usuario el número de unidades del producto
+    num_unidades = int(input("Ingrese el número de unidades: "))
+
+    # Calcular el coste total
+    coste_total = precio_producto * num_unidades
+
+    # Formatear y mostrar la cadena con el nombre del producto, precio unitario, número de unidades y coste total
+    print(f"{nombre_producto}: {precio_producto:09.2f} {num_unidades:03d} {coste_total:011.2f}")
+
+
+
+def suma():
+    n=int(input("ingrese un numero : "))
+    suma = n*(n+1)/2
+    print(f"la suma de los primeros numeros enteros desde el 1 hasta {n} es {suma}")
+
+
+def alreves():
+    cadena = input("ingrese una cadena: ")
+    print(cadena[::-1])
+    lista= input("Ingrese palabras").split()
+    print(lista[::-1])
+
+alreves()   
