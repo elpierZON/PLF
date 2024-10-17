@@ -60,29 +60,3 @@ resultado = notas_a_calificaciones(notas)
 print(resultado)  
 
 
-# Escribir una función que simule una calculadora científica que permita calcular el seno, coseno, tangente, exponencial y logaritmo neperiano. 
-# La función preguntará al usuario el valor y la función a aplicar, y mostrará por pantalla una tabla con los enteros de 1 al valor introducido 
-# y el resultado de aplicar la función a esos enteros.
-
-print("CALCULADORA CIENTIFICA")
-
-def calculadora_cientifica():
-    numero = int(input("Ingrese un numero a maximo "))
-    print("elige la operacion: ")
-    print("1: Seno")
-    print("2: Coseno")
-    print("3: Tangente")
-    print("4: Exponencial")
-    print("5: Logaritmo Neperiano")
-    operacion = int(input("Introduzca el numero de la operacion deseada"))
-
-    if operacion==1:
-
-        
-    
-
-
-
-
-#calculadora_cientifica()  
-
