@@ -42,3 +42,11 @@ contador = lista_palabras.count(palabra_a_buscar)
 
 # Imprimir el número de veces que aparece la palabra en la lista
 print(f"La palabra '{palabra_a_buscar}' aparece {contador} veces en la lista.")
+
+
+def si():
+    lista= input("Ingrese una lista de palabras separadas : ").split()
+    palabra = input("Ingrese la palabra a eliminar: ")
+    lista.remove(palabra)
+    print(lista)
+si()

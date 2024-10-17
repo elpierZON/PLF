@@ -1,0 +1,63 @@
+
+#include "miniwin.h"
+#include <string>
+#include <vector>
+
+using namespace miniwin;
+using namespace std;
+
+const int escalado = 10;  // <-------------------- Escalado de los cuadrados
+const bool pintarBorde = false; // <-------------------- Pintar borde de los cuadrados
+
+void colores(const string& color) {
+        if (color == "c_1") {
+            color_rgb(60, 171, 13);
+        }
+        if (color == "c_2") {
+            color_rgb(171, 23, 13);
+        }
+}
+
+void dibujaCuadrado(int a, int b, const string& colorRelleno) {
+    if (colorRelleno.empty()) return; // No dibujar nada si el color es una cadena vacía
+    const int x = a * escalado;
+    const int y = b * escalado;
+    colores(colorRelleno);
+    rectangulo_lleno(x, y, x + escalado, y + escalado);
+    if (pintarBorde) {
+        color_rgb(100, 100, 100); // <-------------------- Color plomo para el borde
+        linea(x, y, x, y + escalado);
+        linea(x, y + escalado, x + escalado, y + escalado);
+        linea(x + escalado, y + escalado, x + escalado, y);
+        linea(x + escalado, y, x, y);
+    }
+}
+
+void dibujaFila(int fila, const vector<string>& colores) {
+    for (int i = 0; i < colores.size(); ++i) {
+        if (!colores[i].empty()) { // Verificar que el color no sea nulo o una cadena vacía
+            dibujaCuadrado(i, fila, colores[i]);
+        }
+    }
+}
+
+int main() {
+    vredimensiona(28 * escalado, 12 * escalado);
+
+    // Dibujando
+    dibujaFila(0, {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""});
+    dibujaFila(1, {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""});
+    dibujaFila(2, {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""});
+    dibujaFila(3, {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""});
+    dibujaFila(4, {"", "", "", "", "", "", "", "", "", "", "", "", "c_2", "c_2", "c_2", "", "", "", "", "", "c_2", "c_2", "c_2", "c_2", "", "", "", ""});
+    dibujaFila(5, {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "c_2", "c_2", "c_2", "c_2", "c_2", "c_2", "c_2", "", "", "", "", "", "", ""});
+    dibujaFila(6, {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "c_2", "c_2", "c_2", "c_2", "c_2", "c_2", "c_2", "", "", "", "", "", "", ""});
+    dibujaFila(7, {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "c_2", "c_2", "c_2", "c_2", "c_2", "c_2", "c_2", "", "", "", "", "", "", ""});
+    dibujaFila(8, {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "c_2", "c_2", "c_1", "c_1", "c_1", "c_2", "c_2", "", "", "", "", "", "", ""});
+    dibujaFila(9, {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "c_1", "c_1", "c_1", "", "", "", "", "", "", "", "", ""});
+    dibujaFila(10, {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "c_1", "c_1", "c_1", "", "", "", "", "", "", "", "", ""});
+    dibujaFila(11, {"", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""});
+
+    refresca();
+    return 0;
+}

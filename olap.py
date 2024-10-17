@@ -44,7 +44,7 @@ def crear_listas():
     print("Palabras que aparecen solo en la primera lista:", solo_en_primera)
     print("Palabras que aparecen solo en la segunda lista:", solo_en_segunda)
     print("Todas las palabras que aparecen en ambas listas:", union)
-#crear_listas()
+crear_listas()
 # Llamar a la función principal
 
 
@@ -78,4 +78,4 @@ def alreves():
     lista= input("Ingrese palabras").split()
     print(lista[::-1])
 
-alreves()   
+#alreves()   
