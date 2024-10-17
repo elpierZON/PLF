@@ -286,3 +286,28 @@ iterar_dos_listas()
 """""Escribir un programa que permita iterar iterar las listas usando los índices como 
 hemos visto al principio, y haciendo uso de Len(), que nos devuelva la longitud 
 de la lista"""
+def iterar_listas_con_indices():
+    # Solicitar al usuario que ingrese la primera lista
+    lista1 = input("Ingrese los elementos de la primera lista separados por espacio: ").split()
+    
+    # Solicitar al usuario que ingrese la segunda lista
+    lista2 = input("Ingrese los elementos de la segunda lista separados por espacio: ").split()
+    
+    # Verificar que ambas listas tengan la misma longitud
+    if len(lista1) != len(lista2):
+        print("Las listas deben tener la misma longitud.")
+        return
+    
+    # Obtener la longitud de las listas
+    longitud = len(lista1)
+    
+    # Iterar sobre ambas listas utilizando los índices
+    for i in range(longitud):
+        print(f"{lista1[i]} - {lista2[i]}")
+    
+    # Devolver la longitud de las listas
+    return longitud
+
+# Llamar a la función para probarla
+longitud = iterar_listas_con_indices()
+print(f"La longitud de las listas es: {longitud}")
