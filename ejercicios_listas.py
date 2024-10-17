@@ -85,7 +85,6 @@ def problema7():
     # Mostrar la lista sin duplicados
     print("Lista sin duplicados:", lista_sin_duplicados)
 
-
 #problema7()
 
 #8.	Escriba un programa que permita crear dos listas de palabras y que, a continuación, escriba las siguientes listas (en las que no debe haber repeticiones):
@@ -129,7 +128,7 @@ def crear_listas():
     print("Palabras que aparecen solo en la primera lista:", solo_en_primera)
     print("Palabras que aparecen solo en la segunda lista:", solo_en_segunda)
     print("Todas las palabras que aparecen en ambas listas:", union)
-#crear_listas()
+crear_listas()
 # Llamar a la función principal
 
 #9.	Escribir un programa que pregunte el nombre de un producto, 
